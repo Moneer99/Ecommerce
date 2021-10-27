@@ -32,7 +32,7 @@ class AdminController extends Controller
         $data->save();
 
         // redirect back
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Product Added Successfully');
     }
 
 }

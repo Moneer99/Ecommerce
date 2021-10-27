@@ -5,6 +5,16 @@
   <head>
     @include('admin.head')
     <style>
+      .alert-success {
+        background-color:#00D25B;
+        color: #ffffff;
+        padding: 15px;
+        width: 600px;
+        margin-top: 20px;
+      }
+      div .close{
+        color:#000000;
+      }
       .title{
         color:white;
         padding-top:25px;
@@ -38,6 +48,16 @@
   <div class="container-fluid page-body-wrapper">
       <div class='container' align='center'>
           <h1 class='title'>Add Product</h1>
+
+          {{-- alert message when successful added new product --}}
+          @if (session()->has('message'))
+          <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            {{ session()->get('message') }}
+
+          </div>
+
+          @endif
 
         <form action="{{ url('uploadproduct') }}" method="POST" enctype="multipart/form-data">
           @csrf
