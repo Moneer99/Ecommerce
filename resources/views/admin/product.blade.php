@@ -38,7 +38,8 @@
   <div class="container-fluid page-body-wrapper">
       <div class='container' align='center'>
           <h1 class='title'>Add Product</h1>
-        <form action="" method="post">
+
+        <form action="{{ url('uploadproduct') }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class='field-product'>
             <label for='title'>Product Title:</label>
@@ -54,7 +55,7 @@
           </div>
           <div class='field-product'>
             <label for='Quantity'>Quantity:</label>
-            <input type='text' placeholder='Quantity' id='Quantity' name='Quantity'>
+            <input type='text' placeholder='quantity' id='quantity' name='quantity'>
           </div>
           <div class='field-product'>
             <input type='file' name='file' class='choose'>

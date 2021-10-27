@@ -28,3 +28,5 @@ Route::get('/redirect', [HomeController::class, 'redirect'])->name('redirect');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/product', [AdminController::class, 'product'])->name('product');
+
+Route::post('/uploadproduct', [AdminController::class, 'uploadproduct']);
