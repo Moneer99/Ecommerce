@@ -112,6 +112,7 @@ https://templatemo.com/tm-546-sixteen-clothing
 
    @include('user.product')
 
+
     <div class="best-features">
       <div class="container">
         <div class="row">
@@ -193,7 +194,7 @@ https://templatemo.com/tm-546-sixteen-clothing
     <script src="assets/js/accordions.js"></script>
 
 
-    <script language = "text/Javascript"> 
+    <script language = "text/Javascript">
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
       function clearField(t){                   //declaring the array outside of the
       if(! cleared[t.id]){                      // function makes it static and global

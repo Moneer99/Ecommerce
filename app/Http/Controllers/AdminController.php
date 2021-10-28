@@ -4,13 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
     public function product()
     {
-        return view('admin.product');
+        //condition user can not go to page Admin
+        $usertype = Auth::user()->usertype;
+        if ($usertype == 1) {
+            return view('admin.product');
+        } else {
+            return redirect()->back();
+        }
+
     }
+
     public function uploadProduct(Request $request)
     {
         $data = new product;
