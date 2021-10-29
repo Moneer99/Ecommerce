@@ -88,10 +88,6 @@
         </form>
       </div>
 
-          <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
-          <!-- partial -->
-
     @include('admin.scriptScroller')
   </body>
 </html>

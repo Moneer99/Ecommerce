@@ -5,6 +5,16 @@
     @include('admin.head')
 
     <style>
+        .alert-success {
+        background-color:#00D25B;
+        color: #ffffff;
+        padding: 15px;
+        width: 600px;
+        margin-top: 20px;
+      }
+      div .close{
+        color:#000000;
+      }
       .container{
         padding:20px;
       }
@@ -40,6 +50,10 @@
   <div class="container-fluid page-body-wrapper">
       <div class='container' align='center'>
 
+        <div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert">x</button>
+              {{ session('message') }}
+            </div>
                 <table>
                   <tr class='title-table'align='center'>
                     <td class='row-td'>Title</td>
@@ -64,7 +78,7 @@
                 @endforeach
 
                 </table>
-{{-- ======================================================= --}}
+{{-- =======================  paginator  ========================= --}}
                 <div class="d-flex justify-content-center">
                   {!! $data->links() !!}
               </div>
