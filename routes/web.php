@@ -29,4 +29,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/product', [AdminController::class, 'product'])->name('product');
 
+Route::get('/showproduct', [AdminController::class, 'showproduct']);
+
 Route::post('/uploadproduct', [AdminController::class, 'uploadproduct']);

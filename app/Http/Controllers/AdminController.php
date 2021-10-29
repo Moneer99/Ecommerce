@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\product;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,6 +42,14 @@ class AdminController extends Controller
 
         // redirect back
         return redirect()->back()->with('message', 'Product Added Successfully');
+    }
+
+    //show All product in Admin Page
+    public function showproduct()
+    {
+        $data = Product::all();
+
+        return view('admin.showProduct', compact('data'));
     }
 
 }
