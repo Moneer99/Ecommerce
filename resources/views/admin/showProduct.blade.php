@@ -64,6 +64,10 @@
                 @endforeach
 
                 </table>
+{{-- ======================================================= --}}
+                <div class="d-flex justify-content-center">
+                  {!! $data->links() !!}
+              </div>
 
     @include('admin.scriptScroller')
   </body>
