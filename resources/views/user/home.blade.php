@@ -24,7 +24,33 @@ https://templatemo.com/tm-546-sixteen-clothing
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+<style>
+.page-item .page-link{
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    line-height: 22px;
+    border: 1px solid #eee;
+    font-size: 15px;
+    font-weight: 700;
+    color: #121212;
+    transition: all .3s;
+}
 
+.page-item.active span.page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #f33f3f;
+    border-color: #f33f3f !important;
+}
+.page-link:hover{
+  color: #fff;
+  background-color: #f33f3f;
+  border-color: #f33f3f !important;
+  transition: all .3s;
+}
+
+</style>
     </head>
 
     <body>
@@ -165,14 +191,14 @@ https://templatemo.com/tm-546-sixteen-clothing
       </div>
     </div>
 
-    
+
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="inner-content">
               <p>Copyright &copy; 2020 Sixteen Clothing Co., Ltd.
-            
+
             - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
             </div>
           </div>
