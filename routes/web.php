@@ -40,3 +40,5 @@ Route::post('/updateproduct/{id}', [AdminController::class, 'updateproduct']);
 Route::post('/uploadproduct', [AdminController::class, 'uploadproduct']);
 
 Route::get('/search', [HomeController::class, 'search'])->name('search');
+
+Route::post('/addcart/{id}', [HomeController::class, 'addcart']);

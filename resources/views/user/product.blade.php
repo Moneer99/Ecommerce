@@ -8,6 +8,7 @@
 
             {{-- Search bar for product ------------ --}}
           <form action="{{ url('search') }}" method="get" class='form-inline' style='float: right;padding:10px;'>
+            @csrf
             <input class="form-control" type="search" name="search" id="search">
             <input type="submit" value="Search" class="btn btn-success">
           </form>
@@ -25,14 +26,23 @@
               <a href="#"><h4>{{  $product->title  }}</h4></a>
               <h6>${{  $product->price  }}</h6>
               <p>{{  $product->description  }}</p>
+
+              <form action="{{ url('addcart',$product->id) }}" method="POST">
+                @csrf
+                <input type="number" name="quantity" min="1" max='50' value='1' class="form-control" style='width:100px;'>
+                <br>
+                <input type="submit" value="Add Cart" class="btn btn-primary">
+
+
+              </form>
               {{-- <ul class="stars">
                 <li><i class="fa fa-star"></i></li>
                 <li><i class="fa fa-star"></i></li>
                 <li><i class="fa fa-star"></i></li>
                 <li><i class="fa fa-star"></i></li>
                 <li><i class="fa fa-star"></i></li>
-              </ul> --}}
-              <span>Reviews (32)</span>
+              </ul> 
+              <span>Reviews (32)</span>--}}
             </div>
           </div>
         </div>
