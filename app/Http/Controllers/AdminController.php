@@ -72,13 +72,15 @@ class AdminController extends Controller
         $data = Product::find($id);
         // get choose file img
         $image = $request->file;
-        // get Extension of file and add to name
-        $imgName = time() . '.' . $image->getClientOriginalExtension();
-        // create folder and store the file
-        $request->file->move('productImage', $imgName);
 
-        $data->image = $imgName;
+        if ($image) {
+            // get Extension of file and add to name
+            $imgName = time() . '.' . $image->getClientOriginalExtension();
+            // create folder and store the file
+            $request->file->move('productImage', $imgName);
 
+            $data->image = $imgName;
+        }
         $data->title = $request->title;
         $data->price = $request->price;
         $data->description = $request->description;

@@ -17,9 +17,15 @@
         color:#000000;
       }
       .title{
-        color:white;
-        padding-top:25px;
-        font-size:25px;
+        color: white;
+        font-size: 25px;
+        background-color: #6262cb;
+        width: 500px;
+        padding: 20px;
+        margin-top: 35px;
+        margin-bottom: 20px;
+        font-size: 25px;
+        border-radius: 11px;
       }
       .field-product{
         padding: 15px;
@@ -48,7 +54,7 @@
         <!-- partialmain panel body -->
   <div class="container-fluid page-body-wrapper">
       <div class='container' align='center'>
-          <h1 class='title'>Update Product</h1>
+          <h1 class="title">Update Product</h1>
 
           {{-- alert message when successful added new product --}}
           @if (session()->has('message'))
