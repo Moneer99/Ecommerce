@@ -61,4 +61,34 @@ class AdminController extends Controller
 
     }
 
+    public function updateview($id)
+    {
+        $data = Product::find($id);
+        return view('admin.updateproduct', compact('data'));
+    }
+
+    public function updateproduct(Request $request, $id)
+    {
+        $data = Product::find($id);
+        // get choose file img
+        $image = $request->file;
+        // get Extension of file and add to name
+        $imgName = time() . '.' . $image->getClientOriginalExtension();
+        // create folder and store the file
+        $request->file->move('productImage', $imgName);
+
+        $data->image = $imgName;
+
+        $data->title = $request->title;
+        $data->price = $request->price;
+        $data->description = $request->description;
+        $data->quantity = $request->quantity;
+
+        // store in DB
+        $data->save();
+
+        // redirect back
+        return redirect()->back()->with('message', 'Update Product Added Successfully');
+    }
+
 }

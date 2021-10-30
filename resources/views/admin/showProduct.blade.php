@@ -50,10 +50,13 @@
   <div class="container-fluid page-body-wrapper">
       <div class='container' align='center'>
 
+        @if (session()->has('message'))
         <div class="alert alert-success">
           <button type="button" class="close" data-dismiss="alert">x</button>
               {{ session('message') }}
             </div>
+            @endif
+
                 <table>
                   <tr class='title-table'align='center'>
                     <td class='row-td'>Title</td>
@@ -71,7 +74,7 @@
                     <td class='row-td'>{{ $product->quantity}}</td>
                     <td class='row-td'><img height="100px"width="100px" src="/productImage/{{ $product->image }}" alt=""></td>
                     <td class='row-td'>
-                      <a href="{{ url('upadeview',$product->id)}}"class="btn btn-primary">Update</a>
+                      <a href="{{ url('updateview',$product->id)}}"class="btn btn-primary">Update</a>
                       <a href="{{ url('deleteproduct',$product->id)}}" class="btn btn-danger">Delete</a>
                     </td>
                   </tr>
