@@ -25,6 +25,27 @@ https://templatemo.com/tm-546-sixteen-clothing
     <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
     <link rel="stylesheet" href="assets/css/owl.css">
 <style>
+ /* alert success for session */
+ .alert-success {
+  background-color: #f33f3f;
+    background-color: #28a745;
+    color: #ffffff;
+    padding: 10px;
+    width: 40%;
+    height: 9%;
+    z-index: 8;
+    border: 4px solid #e9ff0b;
+    --tw-translate-x: 50%;
+    transform: translate(140%, -930%);
+    text-align: center;
+    position: absolute;
+    /* margin-right: 10%; */
+      }
+      div.header-text{
+        position: relative;
+      }
+
+/* ======================== */
 .page-item .page-link{
     width: 44px;
     height: 44px;
@@ -49,8 +70,11 @@ https://templatemo.com/tm-546-sixteen-clothing
   border-color: #f33f3f !important;
   transition: all .3s;
 }
-/* products style */
-
+/* Cart style */
+form.cart{ 
+  display: flex;
+  justify-content: space-between;
+}
 </style>
     </head>
 
@@ -111,6 +135,8 @@ https://templatemo.com/tm-546-sixteen-clothing
       </nav>
     </header>
 
+
+
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="banner header-text">
@@ -134,10 +160,21 @@ https://templatemo.com/tm-546-sixteen-clothing
           </div>
         </div>
       </div>
+                {{-- product add to cart messages ------------------}}
+                @if (session()->has('message'))
+
+                <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">x</button>
+                {{-- {{ session()->get('message') }} --}}
+                {{ session('message') }}
+                            </div>
+                @endif
     </div>
     <!-- Banner Ends Here -->
 
-   @include('user.product')
+
+
+@include('user.product')
 
 
     <div class="best-features">

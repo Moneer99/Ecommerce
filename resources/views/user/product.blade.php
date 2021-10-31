@@ -27,12 +27,10 @@
               <h6>${{  $product->price  }}</h6>
               <p>{{  $product->description  }}</p>
 
-              <form action="{{ url('addcart',$product->id) }}" method="POST">
+              <form action="{{ url('addcart',$product->id) }}" method="POST" class='cart'>
                 @csrf
-                <input type="number" name="quantity" min="1" max='50' value='1' class="form-control" style='width:100px;'>
-                <br>
-                <input type="submit" value="Add Cart" class="btn btn-primary">
-
+                <input type="submit" value="Add Cart" class="btn btn-success" >
+                <input type="number" name="quantity" min="1" max='50' value='1' class="form-control" style='width:100px;' required>
 
               </form>
               {{-- <ul class="stars">
@@ -41,8 +39,8 @@
                 <li><i class="fa fa-star"></i></li>
                 <li><i class="fa fa-star"></i></li>
                 <li><i class="fa fa-star"></i></li>
-              </ul> 
-              <span>Reviews (32)</span>--}}
+              </ul>
+              <span>Reviews (32)</span> --}}
             </div>
           </div>
         </div>

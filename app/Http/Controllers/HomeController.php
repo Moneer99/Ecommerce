@@ -66,17 +66,28 @@ class HomeController extends Controller
     // Add Cart to Product
     public function addcart(Request $request, $id)
     {
+        // dd(new Cart);
+
         // 1- check if the user login / register
         if (Auth::id()) {
-            //get user data from
-            $user = auth()->user();
-            // $user = Auth::user();
 
+            //1.1 -Get All user data from Database
+            $user = auth()->user();
+            $product = Product::find($id);
+            //1.2-Create Model Cart to Push value to Table Database Cart
             $cart = new Cart;
 
+            //1.3-Push Data to Cart Table
             $cart->name = $user->name;
+            $cart->phone = $user->phone;
+            $cart->address = $user->address;
+            $cart->product_title = $product->title;
+            $cart->quantity = $request->quantity;
+            $cart->price = $product->price;
 
-            return redirect()->back();
+            $cart->save();
+
+            return redirect()->back()->with('message', 'Added Product To Cart Successfully');
         } else {
 
             return redirect('login');
