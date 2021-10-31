@@ -24,10 +24,10 @@ class HomeController extends Controller
             //got all data from Database
             $data = Product::paginate(3);
 
-            //for Cart
+            //for Cart==========
             //1- Get Data user
             $user = auth()->user();
-            //3-Count Cart for that user
+            //3-Count Products in Cart for that user
             $count = Cart::where('phone', $user->phone)->count();
 
             return view('user.home', compact('data', 'count'));
@@ -107,10 +107,10 @@ class HomeController extends Controller
         //1- Get Data user
         $user = auth()->user();
 
-        //2-Get Cart Data for that user
+        //2-Get Data Cart for that user
         $cart = Cart::where('phone', $user->phone)->get();
 
-        //3-Count Cart for that user
+        //3-Count products in Cart for that user
         $count = Cart::where('phone', $user->phone)->count();
 
         // 4- redirect view to show result page

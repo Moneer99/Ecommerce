@@ -87,6 +87,21 @@ form.cart{
     color: #ffffff;
     font-weight: bold;
     }
+
+    /* ==========Cart show ================ */
+    .cart-container{
+        padding:100px;
+    }
+    .cart-container .frow-cart{
+        background-color: gray;
+        padding: 10px;
+        color:white;
+    }
+    .cart-container .row-cart{
+        padding: 20px;
+        color:white;
+        background-color: #000000;
+    }
 </style>
     </head>
 
@@ -151,9 +166,25 @@ form.cart{
         </div>
       </nav>
     </header>
-<div style="padding:100px;">
+<div align="center" class="cart-container">
 
-    <h1> cart content</h1>
+    <table>
+        
+        <tr>
+            <td class="frow-cart">Product Name</td>
+            <td class="frow-cart">Quantity</td>
+            <td class="frow-cart">Price</td>
+        </tr>
+        @foreach ($cart as $carts)
+
+        <tr>
+            <td class="row-cart">{{ $carts->product_title }}</td>
+            <td class="row-cart">{{ $carts->quantity }}</td>
+            <td class="row-cart">{{ $carts->price }}</td>
+        </tr>
+        @endforeach
+
+    </table>
 
 </div>
 
