@@ -38,8 +38,20 @@ https://templatemo.com/tm-546-sixteen-clothing
     --tw-translate-x: 50%;
     transform: translate(140%, -930%);
     text-align: center;
-    position: absolute;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
     /* margin-right: 10%; */
+    /* ========== */
+    background: #00ff1e;
+    top: 1.2rem;
+    position: fixed;
+    height: 2.5rem;
+    font-size: 18px;
+    width: 380px;
+    /* z-index: 0; */
+    /* flex-basis: 0; */
+    transform: translate(0%, 140%);
       }
       div.header-text{
         position: relative;
@@ -167,21 +179,31 @@ form.cart{
       </nav>
     </header>
 <div align="center" class="cart-container">
-
+  @if (session()->has('message'))
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">x</button>
+        {{ session('message') }}
+      </div>
+      @endif
     <table>
         
         <tr>
             <td class="frow-cart">Product Name</td>
             <td class="frow-cart">Quantity</td>
             <td class="frow-cart">Price</td>
-        </tr>
+            <td class="frow-cart">Action</td>
+          </tr>
         @foreach ($cart as $carts)
 
         <tr>
             <td class="row-cart">{{ $carts->product_title }}</td>
             <td class="row-cart">{{ $carts->quantity }}</td>
             <td class="row-cart">{{ $carts->price }}</td>
+            <td class="row-cart">
+              <a href="{{ url('deletecart',$carts->id) }}" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
+      
         @endforeach
 
     </table>
