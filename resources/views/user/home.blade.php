@@ -39,7 +39,6 @@ https://templatemo.com/tm-546-sixteen-clothing
     transform: translate(140%, -930%);
     text-align: center;
     position: absolute;
-    /* margin-right: 10%; */
       }
       div.header-text{
         position: relative;

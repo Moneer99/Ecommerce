@@ -5,6 +5,8 @@
 /storage/*.key
 /vendor
 /public/vendor
+/public/admin/assets/images
+/public/admin/assets/vendors
 .env
 .env.backup
 .phpunit.result.cache

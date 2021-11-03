@@ -6,7 +6,7 @@
             <h2>Latest Products</h2>
             <a href="products.html">view all products <i class="fa fa-angle-right"></i></a>
 
-            {{-- Search bar for product ------------ --}}
+            {{-- Search bar for product -------- --}}
           <form action="{{ url('search') }}" method="get" class='form-inline' style='float: right;padding:10px;'>
             @csrf
             <input class="form-control" type="search" name="search" id="search">
@@ -16,7 +16,7 @@
           </div>
         </div>
 
-        {{--- -show products from database- -------------}}
+        {{--- -show products from database- -------}}
         @foreach ($data as $product )
         <div class="col-md-4">
           <div class="product-item">
