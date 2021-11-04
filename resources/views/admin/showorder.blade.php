@@ -60,6 +60,7 @@
                     <td class='row-td'>Price</td>
                     <td class='row-td'>Quantity</td>
                     <td class='row-td'>Status</td>
+                    <td class='row-td'>Action</td>
                   </tr>
                   @foreach ($order as $product)
                   <tr class='content-table'>
@@ -70,6 +71,9 @@
                       <td class='row-td'>{{ $product->price }}</td>
                     <td class='row-td'>{{ $product->quantity}}</td>
                     <td class='row-td'>{{ $product->status}}</td>
+                    <td class='row-td'>
+                        <a href="{{ url('status',$product->id) }}"class="btn btn-success">Delivered</a>
+                    </td>
                     {{-- <td class='row-td'><img height="100px"width="100px" src="/productImage/{{ $product->image }}" alt=""></td> --}}
                     {{-- <td class='row-td'>
                       <a href="{{ url('updateview',$product->id)}}"class="btn btn-primary">Update</a>

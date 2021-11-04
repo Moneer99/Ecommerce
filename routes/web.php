@@ -50,3 +50,5 @@ Route::get('/deletecart/{id}', [HomeController::class, 'deletecart']);
 Route::post('/order', [HomeController::class, 'order']);
 
 Route::get('/showorder', [AdminController::class, 'showorder']);
+
+Route::get('/status/{id}', [AdminController::class, 'status']);

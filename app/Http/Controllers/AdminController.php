@@ -101,4 +101,13 @@ class AdminController extends Controller
         return view('admin.showorder', compact('order'));
     }
 
+    //status orders
+    public function status($id)
+    {
+        $order = Order::find($id);
+        $order->status = 'Delivered';
+        $order->save();
+        return redirect()->back();
+    }
+
 }
