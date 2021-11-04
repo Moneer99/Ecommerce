@@ -186,27 +186,42 @@ form.cart{
       </div>
       @endif
     <table>
-        
+
         <tr>
             <td class="frow-cart">Product Name</td>
             <td class="frow-cart">Quantity</td>
             <td class="frow-cart">Price</td>
             <td class="frow-cart">Action</td>
           </tr>
+
+        <form action="{{ url('order') }}" method="POST">
+            @csrf
         @foreach ($cart as $carts)
 
         <tr>
-            <td class="row-cart">{{ $carts->product_title }}</td>
-            <td class="row-cart">{{ $carts->quantity }}</td>
-            <td class="row-cart">{{ $carts->price }}</td>
+            <td class="row-cart">{{ $carts->product_title }}
+            <input type="text" style="display:none" value='{{ $carts->product_title }}'name='productname[]'>
+            </td>
+            <td class="row-cart">{{ $carts->quantity }}
+              <input type="text" style="display:none" value='{{ $carts->quantity }}'name='quantity[]'>
+
+            </td>
+            <td class="row-cart">{{ $carts->price }}
+              <input type="number" style="display:none" value='{{ $carts->price }}'name='price[]'>
+
+            </td>
             <td class="row-cart">
               <a href="{{ url('deletecart',$carts->id) }}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
-      
+
         @endforeach
 
     </table>
+
+    <input type="submit" class="btn btn-success mt-2" value="Confirm Order">
+
+  </form>
 
 </div>
 
