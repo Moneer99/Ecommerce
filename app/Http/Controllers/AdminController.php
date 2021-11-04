@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -91,6 +92,13 @@ class AdminController extends Controller
 
         // redirect back
         return redirect()->back()->with('message', 'Update Product Added Successfully');
+    }
+
+    //show All orders
+    public function showorder()
+    {
+        $order = Order::paginate(5);
+        return view('admin.showorder', compact('order'));
     }
 
 }
