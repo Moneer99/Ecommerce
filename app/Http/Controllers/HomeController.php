@@ -26,12 +26,15 @@ class HomeController extends Controller
             //got all data from Database
             $data = Product::paginate(3);
 
-            //for Cart==========
+            //==== for Cart conut products  =====
+
             //1- Get Data user
             $user = auth()->user();
-            //3-Count Products in Cart for that user
+
+            //2-Count Products in Cart for that user
             $count = Cart::where('phone', $user->phone)->count();
 
+            //3- return view with all data for show it
             return view('user.home', compact('data', 'count'));
 
         }
@@ -60,6 +63,7 @@ class HomeController extends Controller
     {
         // dd(Product::where('title', $request->search)->get());
         $search = $request->search;
+        dump($search);
 
         if ($search == '') {
             $data = Product::paginate(3);
@@ -158,6 +162,33 @@ class HomeController extends Controller
 
         // redirect
         return redirect()->back();
+    }
+
+    public function allproducts()
+    {
+                    //got all data from Database
+                    $data = Product::all();
+
+                    //==== for Cart conut products  =====
+
+                    //1- Get Data user
+                    $user = auth()->user();
+
+                    if($user){
+
+                        //2-Count Products in Cart for that user
+                    $count = Cart::where('phone', $user->phone)->count();
+
+                    //3- return view with all data for show it
+                    return view('user.home', compact('data', 'count'));
+
+                    }else{
+
+                        return view('user.home', compact('data'));
+                    }
+
+
+
     }
 
 }

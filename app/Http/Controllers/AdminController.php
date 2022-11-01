@@ -98,6 +98,10 @@ class AdminController extends Controller
     public function showorder()
     {
         $order = Order::paginate(5);
+        if(!$order){
+            // return view('admin.showorder')->with('order','NO order to Now !');
+            return view('admin.showorder', compact('order'));
+        }
         return view('admin.showorder', compact('order'));
     }
 
