@@ -24,5 +24,5 @@
 1. run `php artisan key:generate`
 1. run `php artisan ecommerce:install`
 1. run `php artisan ecommerce: db:seed --class=ProductSeeder`
-1. credentials to access admin panel (email: `admin@admin.com`, password: `12345`)
+1. credentials to access admin panel (email: `admin@gmail.com`, password: `12345`)
 
