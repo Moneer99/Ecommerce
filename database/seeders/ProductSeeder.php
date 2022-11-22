@@ -16,46 +16,60 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
            [
-           'title' => 'Product-1',
-           'price'=>938,
+           'title' => 'Boy’s Shose',
+           'price'=>38,
            'description' => 'this is a description for product 1',
-           'quantity' =>93,
-           'image' => '2.jpg'
+           'quantity' =>12,
+           'image' => '1.jpg'
         ],
            [
-           'title' => 'Product-2',
-           'price'=>388,
+           'title' => "Boy’s T-Shirt",
+           'price'=>45,
            'description' => 'this is a description for product 2',
            'quantity' =>22,
            'image' => '2.jpg'
         ],
         [
-            'title' => 'Product-3',
-            'price'=>204,
+            'title' => "Gril's T-Shirt",
+            'price'=>52,
             'description' => 'this is a description for product 3',
-            'quantity' =>48,
-            'image' => '2.jpg'
-        ],
-        [
-            'title' => 'Product-4',
-            'price'=>24,
-            'description' => 'this is a description for product 4',
             'quantity' =>8,
-            'image' => '2.jpg'
+            'image' => '3.jpg'
         ],
         [
-            'title' => 'Product-5',
-            'price'=>43,
-            'description' => 'this is a description for product 5',
-            'quantity' =>78,
-            'image' => '2.jpg'
+            'title' => 'Boy’s Pants',
+            'price'=>65,
+            'description' => 'this is a description for product 4',
+            'quantity' =>17,
+            'image' => '4.jpg'
+        ],
+         [
+           'title' => 'Boy’s Shose',
+           'price'=>38,
+           'description' => 'this is a description for product 1',
+           'quantity' =>12,
+           'image' => '1.jpg'
+        ],
+           [
+           'title' => "Boy’s T-Shirt",
+           'price'=>45,
+           'description' => 'this is a description for product 2',
+           'quantity' =>22,
+           'image' => '2.jpg'
         ],
         [
-            'title' => 'Product-6',
-            'price'=>780,
-            'description' => 'this is a description for product 6',
-            'quantity' =>86,
-            'image' => '2.jpg'
+            'title' => "Gril's T-Shirt",
+            'price'=>52,
+            'description' => 'this is a description for product 3',
+            'quantity' =>8,
+            'image' => '3.jpg'
+        ],
+        [
+            'title' => 'Boy’s Pants',
+            'price'=>65,
+            'description' => 'this is a description for product 4',
+            'quantity' =>17,
+            'image' => '4.jpg'
         ],
         ]);
     }

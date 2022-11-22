@@ -7,12 +7,12 @@
       <li class="nav-item profile">
         <div class="profile-desc">
           <div class="profile-pic">
-            <div class="count-indicator">
+            {{-- <div class="count-indicator">
               <img class="img-xs rounded-circle " src="admin/assets/images/faces/face15.jpg" alt="">
               <span class="count bg-success"></span>
-            </div>
+            </div> --}}
             <div class="profile-name">
-              <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
+              <h5 class="mb-0 font-weight-normal" style="color:#fff;">Henry Klein</h5>
               <span>Gold Member</span>
             </div>
           </div>
@@ -56,35 +56,35 @@
       <li class="nav-item nav-category">
         <span class="nav-link">Navigation</span>
       </li>
-      <li class="nav-item menu-items">
+      {{-- <li class="nav-item menu-items">
         <a class="nav-link" href="{{route('home') }}">
           <span class="menu-icon">
             <i class="mdi mdi-speedometer"></i>
           </span>
           <span class="menu-title">Dashboard</span>
         </a>
-      </li>
+      </li> --}}
       <li class="nav-item menu-items">
         <a class="nav-link" href="{{ url('product') }}">
-          <span class="menu-icon">
+          {{-- <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
-          </span>
+          </span> --}}
           <span class="menu-title">Add Product</span>
         </a>
       </li>
       <li class="nav-item menu-items">
         <a class="nav-link" href="{{ url('showproduct') }}">
-          <span class="menu-icon">
+          {{-- <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
-          </span>
+          </span> --}}
           <span class="menu-title">Show All Product</span>
         </a>
       </li>
       <li class="nav-item menu-items">
         <a class="nav-link" href="{{ url('showorder') }}">
-          <span class="menu-icon">
+          {{-- <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
-          </span>
+          </span> --}}
           <span class="menu-title">Show All Orders</span>
         </a>
       </li>

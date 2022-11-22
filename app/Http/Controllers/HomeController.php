@@ -19,7 +19,9 @@ class HomeController extends Controller
 
         if ($usertype == '1') {
 
-            return view('admin.home');
+            $data = Product::paginate(4);
+
+            return view('admin.showProduct', compact('data'));
 
         } else {
 
@@ -50,7 +52,7 @@ class HomeController extends Controller
             //got all data from Database
             $data = Product::paginate(3);
 
-            return view('user.home', compact('data'));
+            return view('home', compact('data'));
 
             //or can use below
             // return view('user.home', ['stored' => $stored]);
@@ -176,15 +178,15 @@ class HomeController extends Controller
 
                     if($user){
 
-                        //2-Count Products in Cart for that user
+                    //2-Count Products in Cart for that user
                     $count = Cart::where('phone', $user->phone)->count();
 
                     //3- return view with all data for show it
-                    return view('user.home', compact('data', 'count'));
+                    return view('user.allproducts', compact('data', 'count'));
 
                     }else{
 
-                        return view('user.home', compact('data'));
+                        return view('products', compact('data'));
                     }
 
 

@@ -5,7 +5,7 @@
   <head>
     @include('admin.head')
   </head>
-  <body>
+  <body style="color:white;">
     <div class="container-scroller">
       <!-- partial:partials/_sidebar.html -->
     @include('admin/sidebar')

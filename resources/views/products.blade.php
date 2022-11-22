@@ -113,7 +113,7 @@ form.cart{
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav" style="margin-left:26%">
               <li class="nav-item active">
               <a class="nav-link" href="{{ route('home') }}">Home
                   <span class="sr-only">(current)</span>
@@ -155,16 +155,15 @@ form.cart{
     </header>
 
 
-
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="banner header-text">
       <div class="owl-banner owl-carousel" style="display: block;">
-        <div class="banner-item-01"style="display: block;">
+        {{-- <div class="banner-item-01"style="display: block;">
           <div class="text-content">
             <h4>Best Offer</h4>
             <h2>New Arrivals On Sale</h2>
-          </div>
+          </div> --}}
         </div>
         <div class="banner-item-02"style="display: none;">
           <div class="text-content">

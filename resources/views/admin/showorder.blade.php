@@ -27,7 +27,7 @@
         padding: 15px;
       }
       .content-table{
-        background-color:black;
+        /* background-color:black; */
         align-items: center;
       }
       .content-table .row-td{
@@ -52,7 +52,7 @@
 
 
                 <table>
-                  <tr class='title-table'align='center'>
+                  <tr class='title-table'align='center' style='color:#fff;'>
                     <td class='row-td'>Name</td>
                     <td class='row-td'>phone</td>
                     <td class='row-td'>Address</td>

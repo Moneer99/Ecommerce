@@ -10,9 +10,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/redirect', [HomeController::class, 'redirect'])->name('redirect');
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/redirect', [HomeController::class, 'redirect'])->name('redirect');
 
 Route::get('/product', [AdminController::class, 'product'])->name('product');
 

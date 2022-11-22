@@ -5,6 +5,9 @@
     @include('admin.head')
 
     <style>
+      body{
+        color:white;
+      }
         .alert-success {
         background-color:#00D25B;
         color: #ffffff;
@@ -57,7 +60,7 @@
             </div>
             @endif
 
-                <table>
+                <table style="color:#fff;">
                   <tr class='title-table'align='center'>
                     <td class='row-td'>Title</td>
                     <td class='row-td'>Price</td>
@@ -82,7 +85,7 @@
 
                 </table>
 {{-- =======================  paginator  ========================= --}}
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center" style="margin-top:15px;">
                   {!! $data->links() !!}
               </div>
 

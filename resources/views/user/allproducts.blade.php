@@ -160,11 +160,11 @@ form.cart{
     <!-- Banner Starts Here -->
     <div class="banner header-text">
       <div class="owl-banner owl-carousel" style="display: block;">
-        <div class="banner-item-01"style="display: block;">
+        {{-- <div class="banner-item-01"style="display: block;">
           <div class="text-content">
             <h4>Best Offer</h4>
             <h2>New Arrivals On Sale</h2>
-          </div>
+          </div> --}}
         </div>
         <div class="banner-item-02"style="display: none;">
           <div class="text-content">
